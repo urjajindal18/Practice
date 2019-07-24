@@ -1,21 +1,39 @@
-#include <iostream>
-#include <iomanip>
+#include<bits/stdc++.h>
 using namespace std;
-
-int main() {
-	float Y;
-	int X;
-	cin>>X>>Y;
-	if (0<X<=2000 && 0<=Y<=2000)
+int main()
+{
+	long long int t,n;
+	long long int avg;
+	cin>>t;
+	while(t--)
 	{
-	    if(X%5==0  && (X+0.50)<=Y )
-	    {
-           Y=Y-X-0.50;
-	       cout<<fixed<<setprecision(2)<<Y;
-	    }
-
-	    else cout<<fixed<<setprecision(2)<<Y;
+	    long long int sum=0;
+		int flag=1;
+		cin>>n;
+		long long int a[n];
+		for(int i=0;i<n;i++)
+		{
+			cin>>a[i];
+			sum=sum+a[i];
+		}
+		if(sum%n!=0)
+		{
+		    cout<<"Impossible"<<endl;
+		}
+		else
+		{
+		    avg=sum/n;
+		    for(int i=0;i<n;i++)
+		    {
+			if(avg==a[i])
+			{
+				flag=0;
+				cout<<i+1<<endl;
+				break;
+			}
+		}
+		if(flag==1)
+		cout<<"Impossible\n";
+		}
 	}
-	return 0;
 }
-
