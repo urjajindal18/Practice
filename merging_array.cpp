@@ -9,7 +9,7 @@ int merge(int ar1[],int ar2[],int n)
     int i=0,j=0,k=0;
     int avg;
     int rr=0;
-    for(i;i<n;i++)
+    for(i;i<n,j<n;i++)
     {
         cout<<endl<<i<<j<<k<<rr;
         if(ar1[i]<ar2[j])
